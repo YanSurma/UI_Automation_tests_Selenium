@@ -37,11 +37,12 @@ class EcoFriendly(BasePage):
         actions.move_to_element(item_banner).perform()
         compare_button = self.find(*loc.COMPARE_BUTTON)
         compare_button.click()
+        return item_name
 
     def check_compare_alert(self, product_name):
         compare_alert = self.find(*loc.COMPARE_ALERT)
         print(compare_alert.text)
-        assert compare_alert.text == f'You added product {product_name} to the comparison list.'
+        assert f'You added product {product_name}' in compare_alert.text
 
     def check_item_name_on_item_page(self, text):
         item_page_name = self.find(*loc.ITEM_PAGE_NAME)

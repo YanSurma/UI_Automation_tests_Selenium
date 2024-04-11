@@ -5,6 +5,7 @@ from time import sleep
 from pages.create_account_page import CreateAccount
 from pages.customer_login_page import CustomerLogin
 from pages.eco_friendly_page import EcoFriendly
+from pages.sale_page import SalePage
 from pages.whats_new_page import WhatsNew
 
 
@@ -34,3 +35,8 @@ def create_account(driver):
 @pytest.fixture()
 def eco_page(driver):
     return EcoFriendly(driver)
+
+
+@pytest.fixture()
+def sale_page(driver):
+    return SalePage(driver)

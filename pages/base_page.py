@@ -19,9 +19,10 @@ class BasePage:
     def find(self, *locator):
         return self.driver.find_element(*locator)
 
-    def find_all(self, locator):
+    def find_all(self, *locator):
         return self.driver.find_elements(*locator)
 
     def check_header_title_is(self, title):
         header_title = self.find(*loc.HEADER_TITLE)
+        print(header_title.text)
         assert header_title.text == title

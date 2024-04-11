@@ -1,6 +1,3 @@
-from time import sleep
-
-
 def test_add_item_by_button_sorting_by_price(eco_page):
     eco_page.open_page(eco_page.page_url)
     eco_page.check_header_title_is('Eco Friendly')

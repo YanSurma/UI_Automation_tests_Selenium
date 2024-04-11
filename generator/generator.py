@@ -1,6 +1,6 @@
 from faker import Faker
 
-from data.data import User
+from data.user import User
 
 fake = Faker()
 
