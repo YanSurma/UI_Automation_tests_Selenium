@@ -13,6 +13,9 @@ class BasePage:
         self.driver.get(f'{self.base_url}{page_url}')
         print()
 
+    def scroll_page(self, x1, x2):
+        self.driver.execute_script(f"window.scrollBy({x1}, {x2})")
+
     def find(self, *locator):
         return self.driver.find_element(*locator)
 

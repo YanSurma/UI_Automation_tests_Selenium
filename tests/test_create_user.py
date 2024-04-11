@@ -1,6 +1,3 @@
-from time import sleep
-
-
 def test_create_user(create_account):
     create_account.open_page(create_account.page_url)
     create_account.check_header_title_is('Create New Customer Account')

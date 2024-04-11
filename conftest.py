@@ -2,8 +2,9 @@ import pytest
 from selenium import webdriver
 from time import sleep
 
-from pages.create_account import CreateAccount
+from pages.create_account_page import CreateAccount
 from pages.customer_login_page import CustomerLogin
+from pages.eco_friendly_page import EcoFriendly
 from pages.whats_new_page import WhatsNew
 
 
@@ -28,3 +29,8 @@ def customer_login(driver):
 @pytest.fixture()
 def create_account(driver):
     return CreateAccount(driver)
+
+
+@pytest.fixture()
+def eco_page(driver):
+    return EcoFriendly(driver)

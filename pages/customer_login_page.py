@@ -28,3 +28,11 @@ class CustomerLogin(BasePage):
         error_message = self.find(*loc.ERROR_ALERT)
         sleep(2)
         assert error_message.text == 'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.'
+
+    def check_for_email_error(self):
+        email_error = self.find(*loc.EMAIL_ERROR)
+        assert email_error.text == 'This is a required field.'
+
+    def check_for_password_error(self):
+        email_error = self.find(*loc.PASSWORD_ERROR)
+        assert email_error.text == 'This is a required field.'
