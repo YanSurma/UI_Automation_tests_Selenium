@@ -1,6 +1,3 @@
-from time import sleep
-
-
 def test_open_women_banner(sale_page):
     sale_page.open_page(sale_page.page_url)
     sale_page.open_women_promo_banner()
