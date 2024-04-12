@@ -32,7 +32,8 @@ class EcoFriendly(BasePage):
         add_button = self.find(*loc.ADD_BUTTON)
         add_button.click()
         page_item_price = self.find(*loc.ITEM_PRICE)
-        assert item_price.text == page_item_price.text
+        with allure.step('Check that item price equals to price on item page'):
+            assert item_price.text == page_item_price.text
 
     @allure.step('Add item to compare list')
     def add_item_to_compare(self):
