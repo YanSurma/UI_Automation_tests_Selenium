@@ -6,7 +6,6 @@ from pages.create_account_page import CreateAccount
 from pages.customer_login_page import CustomerLogin
 from pages.eco_friendly_page import EcoFriendly
 from pages.sale_page import SalePage
-from pages.whats_new_page import WhatsNew
 
 
 @pytest.fixture()
@@ -15,11 +14,6 @@ def driver():
     driver.set_window_size(1920, 1080)
     yield driver
     sleep(2)
-
-
-@pytest.fixture()
-def whats_new(driver):
-    return WhatsNew(driver)
 
 
 @pytest.fixture()

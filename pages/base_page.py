@@ -1,3 +1,5 @@
+from time import sleep
+
 from selenium.webdriver.remote.webdriver import WebDriver
 from pages.locators import base_locators as loc
 
