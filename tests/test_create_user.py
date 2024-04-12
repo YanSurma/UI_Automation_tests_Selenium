@@ -1,7 +1,9 @@
+import allure
 import pytest
 from data.invalid_data import invalid_auth_data, not_equal_passw
 
 
+@allure.feature('Positive run')
 def test_create_user(create_account):
     create_account.open_page(create_account.page_url)
     create_account.check_header_title_is('Create New Customer Account')
@@ -13,6 +15,7 @@ def test_create_user(create_account):
     assert email == account_email_value
 
 
+@allure.feature('Negative run')
 @pytest.mark.parametrize('data', invalid_auth_data)
 def test_create_user_with_empty_fields(create_account, data):
     create_account.open_page(create_account.page_url)
@@ -21,6 +24,7 @@ def test_create_user_with_empty_fields(create_account, data):
     create_account.check_error_auth_alert()
 
 
+@allure.feature('Negative run')
 def test_create_user_with_not_equal_passwords(create_account):
     create_account.open_page(create_account.page_url)
     create_account.check_header_title_is('Create New Customer Account')

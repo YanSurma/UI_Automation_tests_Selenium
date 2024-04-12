@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.remote.webdriver import WebDriver
 from pages.locators import base_locators as loc
 
@@ -22,6 +23,7 @@ class BasePage:
     def find_all(self, *locator):
         return self.driver.find_elements(*locator)
 
+    @allure.step('Page title equals to open page title')
     def check_header_title_is(self, title):
         header_title = self.find(*loc.HEADER_TITLE)
         print(header_title.text)
