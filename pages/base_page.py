@@ -20,6 +20,9 @@ class BasePage:
     def find(self, *locator):
         return self.driver.find_element(*locator)
 
+    def find_and_send_keys(self, *locator, value):
+        return self.find(*locator).send_keys(value)
+
     def find_all(self, *locator):
         return self.driver.find_elements(*locator)
 
