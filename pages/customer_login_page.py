@@ -42,5 +42,5 @@ class CustomerLogin(BasePage):
 
     @allure.step('Check for password error alert')
     def check_for_password_error(self):
-        email_error = self.find(*loc.PASSWORD_ERROR)
-        assert email_error.text == 'This is a required field.'
+        password_error = self.find(*loc.PASSWORD_ERROR)
+        assert password_error.text == 'This is a required field.'
