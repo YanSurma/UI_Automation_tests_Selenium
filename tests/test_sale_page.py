@@ -1,4 +1,5 @@
 import allure
+from conftest import driver, sale_page
 
 
 @allure.feature('Positive run')

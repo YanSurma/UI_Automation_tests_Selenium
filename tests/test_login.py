@@ -1,4 +1,5 @@
 import allure
+from conftest import driver, customer_login
 
 
 @allure.feature('Positive run')

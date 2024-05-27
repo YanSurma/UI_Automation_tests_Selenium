@@ -1,6 +1,7 @@
 import allure
 import pytest
 from data.invalid_data import invalid_auth_data, not_equal_passw
+from conftest import create_account, driver
 
 
 @allure.feature('Positive run')

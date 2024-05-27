@@ -13,22 +13,22 @@ class CreateAccount(BasePage):
         # Generate data
         user = next(generated_user())
         # Input data
-        first_name_field = self.find_and_send_keys(*loc.FIRST_NAME_FIELD, value=user.first_name)
-        last_name_field = self.find_and_send_keys(*loc.LAST_NAME_FIELD, value=user.last_name)
-        email_field = self.find_and_send_keys(*loc.EMAIL_FIELD, value=user.email)
-        password_field = self.find_and_send_keys(*loc.PASSWORD_FIELD, value=user.password)
-        confirm_password_field = self.find_and_send_keys(*loc.CONFIRM_PASSWORD_FIELD, value=user.password)
-        create_button = self.find(*loc.CREATE_BUTTON).click()
+        self.find_and_send_keys(*loc.FIRST_NAME_FIELD, value=user.first_name)
+        self.find_and_send_keys(*loc.LAST_NAME_FIELD, value=user.last_name)
+        self.find_and_send_keys(*loc.EMAIL_FIELD, value=user.email)
+        self.find_and_send_keys(*loc.PASSWORD_FIELD, value=user.password)
+        self.find_and_send_keys(*loc.CONFIRM_PASSWORD_FIELD, value=user.password)
+        self.find(*loc.CREATE_BUTTON).click()
         return user.first_name, user.last_name, user.email
 
     @allure.step('Fill authorization form with empy fields')
     def fill_auth_form_with_invalid_data(self, first_name, last_name, email, password, confirm_password):
-        first_name_field = self.find_and_send_keys(*loc.FIRST_NAME_FIELD, value=first_name)
-        last_name_field = self.find_and_send_keys(*loc.LAST_NAME_FIELD, value=last_name)
-        email_field = self.find_and_send_keys(*loc.EMAIL_FIELD, value=email)
-        password_field = self.find_and_send_keys(*loc.PASSWORD_FIELD, value=password)
-        confirm_password_field = self.find_and_send_keys(*loc.CONFIRM_PASSWORD_FIELD, value=confirm_password)
-        create_button = self.find(*loc.CREATE_BUTTON).click()
+        self.find_and_send_keys(*loc.FIRST_NAME_FIELD, value=first_name)
+        self.find_and_send_keys(*loc.LAST_NAME_FIELD, value=last_name)
+        self.find_and_send_keys(*loc.EMAIL_FIELD, value=email)
+        self.find_and_send_keys(*loc.PASSWORD_FIELD, value=password)
+        self.find_and_send_keys(*loc.CONFIRM_PASSWORD_FIELD, value=confirm_password)
+        self.find(*loc.CREATE_BUTTON).click()
 
     @allure.step('Set account name and email')
     def get_account_name_and_email(self):
